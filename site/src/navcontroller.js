@@ -1,17 +1,16 @@
-app.controller("NavController", function($scope){
-    $scope.selectedPage = 0;
+function NavCtrl($scope){
     $scope.pages = [
     {
-        name: "Home",
-        pagename: "home"
+        "name": "Home",
+        "pagename": "home"
     },
     {
-        name: "Problems",
-        pagename: "problems"
+        "name": "Problems",
+        "pagename": "problems"
     },
     {
-        name: "Results",
-        pagename: "Results"
+        "name": "Results",
+        "pagename": "results"
     }
     ];
-});
+}
