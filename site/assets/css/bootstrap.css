@@ -268,6 +268,21 @@ a:focus {
   *zoom: 1;
 }
 
+#rules {
+    padding: 35px;
+    background-color:#ffbf00;
+    border: 1px solid #000;
+    border-radius:5px;
+}
+
+#teaminfo {
+    padding: 35px;
+    background-color:#000;
+    border: 1px solid #ffbf00;
+    color: #ffbf00;
+    border-radius:5px;
+}
+
 .row:before,
 .row:after {
   display: table;
