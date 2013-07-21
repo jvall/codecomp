@@ -6180,3 +6180,24 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+
+/* custom definitions for sections */
+
+.sliding-content {
+    padding: 10px 15px;
+    background-color: #fafafa;
+}
+
+.sliding-header-complete {
+    padding: 3px 10px;
+    cursor: pointer;
+    position: relative;
+    background-color: #00ff13;
+}
+
+.sliding-header {
+    padding: 3px 10px;
+    cursor: pointer;
+    position: relative;
+    background-color: #ff5252;
+}
