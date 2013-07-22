@@ -3,22 +3,14 @@ app.controller('ProblemsCtrl', function($scope) {
         {
            title: "Graph Theory",
            score: 90,
-           description: "Make Google maps"
+           description: "Make Google maps",
+           isCollapsed: true
         },
         {
             title: "Tukey Ninether",
             score: 0,
-            description: "Take your entire life to get this problem working"
+            description: "Take your entire life to get this problem working",
+            isCollapsed: true
         }
     ];
-    $scope.toggle = function() {
-        $scope.$broadcast('event:toggle');
-    }
 })
-.directive('toggle', function() {
-    return function(scope, elem, attrs) {
-        scope.$on('event:toggle', function() {
-            elem.slideToggle();
-        });
-    };
-});

@@ -1,4 +1,4 @@
-var app = angular.module('CodeComp', []);
+var app = angular.module('CodeComp', ['ui.bootstrap']);
 app.config(function($routeProvider) {
     $routeProvider
     .when('/problems', {
