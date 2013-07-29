@@ -1,25 +1,39 @@
 <div ng-controller="ProblemsCtrl">
+    <p><h1>Official Problem Set</h1></p>
     <div class="row">
-        <div class="span9">
-            <h1>Official Problem Set</h1>
-        </div>
-        <div class="span9">
-            <accordion close-others="oneAtATime">
+        <div class="span6">
+            <!--<accordion close-others="oneAtATime">
             // TODO: figure out how to customize this heading and format it (find source javascript)
                 <accordion-group heading="{{problem.title}}>" ng-repeat="problem in problems">
                     <p>Score: {{problem.score}}</p>
                     <p>{{problem.description}}</p>
                 </accordion>
-            </accordion>
+            </accordion>-->
+            <div ng-repeat="problem in problems">
+                <p><div ng-class="probClass(problem)" ng-click="problem.isCollapsed = !problem.isCollapsed">
+                    <h3>{{problem.title}}</h3>
+                </div>
+                <div class="sliding-content" collapse="problem.isCollapsed">
+                    <div class="sliding-content-inner">
+                        <div class="row">
+                            <div class="span6">
+                                <b>Your score on this problem:</b> {{problem.score}}
+                            </div>
+                            <div class="span3 offset4">
+                                <button class="btn btn-primary btn-mini" ng-click="openSubmitPanel(problem)">Submit source</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="span12">
+                                {{problem.description}}
+                            </span>
+                        </div>
+                    </div>
+                </div></p>
+            </div>
         </div>
-        <!--<div ng-repeat="problem in problems" class="span9">
-            <div class="sliding-header" ng-click="{{problem.isCollapsed = !problem.isCollapsed}}">
-                <h5>{{problem.title}}</h5>
-            </div>
-            <div class="sliding-content" collapse="{{problem.isCollapsed}}">
-                <p>{{problem.score}}</p>
-                <p>{{problem.description}}</p>
-            </div>
-        </div>-->
+        <div class="span6">
+            Yo
+        </div>
     </div>
 </div>
