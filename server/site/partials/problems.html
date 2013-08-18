@@ -48,10 +48,10 @@
                         <form id="uploadForm" enctype="multipart/form-data">
                             <p><div class="row-fluid">
                                 <div class="span8">
-                                    <input type="file" ng-model="sourceInput" name="source" />
+                                    <input type="file" file-upload />
                                 </div>
                                 <div class="span4">
-                                    <button class="btn btn-success" id="submitSource" ng-click="gradeFile(sourceInput)">Grade Program</button>
+                                    <button class="btn btn-success" id="submitSource" ng-click="gradeFile()">Grade Program</button>
                                 </div>
                             </div></p>
                         </form>
