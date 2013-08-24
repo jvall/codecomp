@@ -14,8 +14,8 @@ app.get('/', function(req, res) {
 });
 
 app.post('/api/grade', function(req, res) {
-    console.log(JSON.stringify(req));
-    console.log('\nuploaded to %s', req.files.source.path);
+    //console.log(req);
+    console.log(req.files.file0.path);
     res.send('Good!');
 });
 

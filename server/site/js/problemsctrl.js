@@ -39,11 +39,11 @@ app.controller('ProblemsCtrl', function($scope, $http) {
     $scope.gradeFile = function() {
         $http({method: 'POST',
             url: '/api/grade',
-            headers: {'Content-Type': undefined},
+            headers: {'Content-Type': false},
             transformRequest: function(data) {
                 var formData = new FormData();
-                for (var i = 0; i < data.files; i++)
-                    formData.append("teamfile" + i, data.files[i]);
+                for (var i = 0; i < data.files.length; i++)
+                    formData.append("file" + i, data.files[i]);
                 return formData;
             },
             data: {files: $scope.files}
