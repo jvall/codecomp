@@ -1,4 +1,5 @@
-var express = require('express');
+var express = require('express'),
+    fs = require('fs');
 var app = express();
 
 app.use(express.bodyParser());
@@ -16,6 +17,9 @@ app.get('/', function(req, res) {
 app.post('/api/grade', function(req, res) {
     //console.log(req);
     console.log(req.files.file0.path);
+    fs.rename(req.files.file0.path, './sources/team_problem_' + req.files.file0.name, function(err) {
+        if (err) throw err;
+    });
     res.send('Good!');
 });
 

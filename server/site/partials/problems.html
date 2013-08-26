@@ -44,14 +44,14 @@
                             <div class="span6"><button class="btn btn-primary">View Last Submission</button></div>
                         </div></p>
                         <h4>Submit Source</h4>
-                        <p>The follow source files are accepted: .c, .java, .py, or .tar</p>
+                        <p>The follow source files are accepted: .c, .java, or .py</p>
                         <form id="uploadForm" enctype="multipart/form-data">
                             <p><div class="row-fluid">
                                 <div class="span8">
                                     <input type="file" name="sourcefile" file-upload />
                                 </div>
                                 <div class="span4">
-                                    <button class="btn btn-success" id="submitSource" ng-click="gradeFile()">Grade Program</button>
+                                    <button class="btn btn-success" id="submitSource" ng-click="gradeFile()" ng-disabled="highlightError" ng-disabled="highlightError" ng-disabled="highlightError" ng-disabled="highlightError" ng-disabled="highlightError" ng-disabled="highlightError" ng-disabled="highlightError" ng-disabled="highlightError" ng-disabled="highlightError">Grade Program</button>
                                 </div>
                             </div></p>
                         </form>

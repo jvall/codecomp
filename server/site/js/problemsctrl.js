@@ -30,6 +30,7 @@ app.controller('ProblemsCtrl', function($scope, $http) {
     };
 
     $scope.showSubmitPane = false;
+    $scope.highlightError = true;
 
     $scope.updateProblemSubmit = function(prob) {
         $scope.showSubmitPane = true;
@@ -53,24 +54,16 @@ app.controller('ProblemsCtrl', function($scope, $http) {
         });
     };
 
-    $scope.oldgradeFile = function() {
-        var src = $scope.sourceFile;
-        if (typeof src === 'undefined')
-            return;
-
-        var ext = src.val().split('.').pop();
-        if (src.val() != '' || $scope.acceptedExtensions.indexOf(ext) > -1) {
-            GraderService.upload(src).then(function(response) {
-                console.log(response);
-            });
-        } else {
-            console.log("Error. Eventually replace this on page.");
-        }
-    };
-
     $scope.$on("fileSelected", function(event, args) {
         $scope.$apply(function() {
-            $scope.files.push(args.file);
+            var ext = args.file.name.split('.').pop();
+            if (ext != '' && $scope.acceptedExtensions.indexOf(ext) > -1) {
+                $scope.files.push(args.file);
+                $scope.highlightError = false;
+            }
+            else {
+                $scope.highlightError = true;
+            }
         });
     });
 });
