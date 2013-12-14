@@ -11,7 +11,8 @@ app.use('/js', express.static(__dirname + '/site/js'));
 app.use('/img', express.static(__dirname + '/site/img'));
 app.use('/partials', express.static(__dirname + '/site/partials'))
 
-// consider using redis for session store
+// actually just use mongo to store sessions:
+// http://blog.modulus.io/nodejs-and-express-sessions
 
 app.get('/', function(req, res) {
     res.sendfile(__dirname + '/site/index.html');
@@ -23,7 +24,9 @@ app.post('/api/grade', function(req, res) {
     fs.rename(req.files.file0.path, './sources/team_problem_' + req.files.file0.name, function(err) {
         if (err) throw err;
         child = exec("bash exec_c.sh ./sources/team_problem_" + req.files.file0.name, function(error, stdout, stderr) {
+            console.log("bash exec_c.sh ./sources/team_problem_" + req.files.file0.name);
             sys.print('stdout: ' + stdout);
+            sys.print('stderr: ' + stderr);
         });
     });
 
@@ -32,4 +35,4 @@ app.post('/api/grade', function(req, res) {
 });
 
 app.listen(3000);
-
+console.log("Running on port 3000");

@@ -50,6 +50,7 @@ app.controller('ProblemsCtrl', function($scope, $http) {
             data: {files: $scope.files}
         })
         .success(function(data, status, headers, config) {
+            $scope.files = [];
             return data;
         });
     };
